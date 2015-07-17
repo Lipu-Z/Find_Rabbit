@@ -7,3 +7,11 @@
 //
 
 #include "MenuScene.h"
+
+bool MenuScene::init(){
+    if (!Scene::init()) {
+        return false;
+    }
+    
+    return true;
+};
