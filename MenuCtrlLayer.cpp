@@ -18,7 +18,7 @@ bool MenuCtrlLayer::init(){
     
     Label *labelStart = Label::createWithSystemFont("start", "", 70);
     MenuItemLabel *menuItemLabel = MenuItemLabel::create(labelStart, CC_CALLBACK_0(MenuCtrlLayer::clickStartGame,this));
-    Menu* menuStart = Menu::create(menuItemLabel,NULL);
+    Menu *menuStart = Menu::create(menuItemLabel,NULL);
     menuStart->setPosition(visibleSize.width/2,visibleSize.height/2);
     this->addChild(menuStart);
     
@@ -27,6 +27,7 @@ bool MenuCtrlLayer::init(){
     return true;
 }
 
+//scene translation
 void MenuCtrlLayer::clickStartGame() {
-    Director::getInstance()->replaceScene(TransitionSplitCols::create(0.3f, GameScene::create()));
+    Director::getInstance()->replaceScene(TransitionTurnOffTiles::create(0.5f, GameScene::create()));
 }
