@@ -7,6 +7,7 @@
 //
 
 #include "MenuCtrlLayer.h"
+#include "GameScene.h"
 
 
 bool MenuCtrlLayer::init(){
@@ -27,5 +28,5 @@ bool MenuCtrlLayer::init(){
 }
 
 void MenuCtrlLayer::clickStartGame() {
-    
+    Director::getInstance()->replaceScene(TransitionSplitCols::create(0.3f, GameScene::create()));
 }
