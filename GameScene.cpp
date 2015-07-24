@@ -8,6 +8,8 @@
 
 #include "GameScene.h"
 #include "MenuCtrlLayer.h"
+#include "GameCtrlLayer.h"
+
 
 bool GameScene::init(){
     if (!Scene::init()) {
@@ -16,11 +18,12 @@ bool GameScene::init(){
     Size visiblesize = Director::getInstance()->getVisibleSize();
     
     //add background
-    auto sprite = Sprite::create("images/bg_game.jpg");
+    auto sprite = Sprite::create("images/gamebackground.jpg");
     sprite->setPosition(Vec2(visiblesize.width/2, visiblesize.height/2));
     this->addChild(sprite);
+        
+    //add game ctrl layer
+    this->addChild(GameCtrlLayer::create());
     
-    //add control layer
-    this->addChild(MenuCtrlLayer::create());
     return true;
 };
