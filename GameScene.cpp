@@ -21,7 +21,7 @@ bool GameScene::init(){
     auto sprite = Sprite::create("images/gamebackground.jpg");
     sprite->setPosition(Vec2(visiblesize.width/2, visiblesize.height/2));
     this->addChild(sprite);
-        
+    
     //add game ctrl layer
     this->addChild(GameCtrlLayer::create());
     
