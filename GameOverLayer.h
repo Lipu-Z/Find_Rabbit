@@ -8,18 +8,20 @@
 
 #ifndef __findrabbit__GameOverLayer__
 #define __findrabbit__GameOverLayer__
-
+USING_NS_CC
 #include <stdio.h>
-class GameOverlayerDelegate {
-public:
+class GameOverLayerDelegate {
     virtual void GameOverLayerRestartGame()=0;
 };
-
 class GameOverLayer:public cocos2d::Layer {
 public:
     virtual bool init();
     CREATE_FUNC(GameOverLayer);
-    
+    void setDelegate(GameOverLayerDelegate *delegate) {m_delegate = delegate;}
+    void GameOver (int CurrentScore, int BestScore);
+private:
+    void ClickStartGame();
+    Label
 }
 
 #endif /* defined(__findrabbit__GameOverLayer__) */
